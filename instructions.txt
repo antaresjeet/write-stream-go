@@ -1,0 +1,77 @@
+Create a full-stack Go application using the Gin framework for HTTP routing and PostgreSQL as the database. The application should include the following features:
+
+1. GraphQL Integration: Use GraphQL to handle all data queries and mutations.
+
+
+2. .env Support: Load environment variables from a .env file (for database credentials, JWT secret, Google OAuth credentials, etc.).
+
+
+3. Google OAuth Signup/Login: Implement JWT authentication based on Google OAuth2 for user authentication. Users should be able to sign in with their Google accounts only. Once authenticated, issue a JWT token that can be used for further API requests.
+
+
+4. Middleware: Implement middleware for:
+
+JWT Authentication
+
+CORS (to allow communication with the SvelteKit frontend)
+
+Request logging (Gin's built-in logger)
+
+
+
+5. Users Table in PostgreSQL: Use GORM or pgx (no raw SQL queries) to interact with PostgreSQL. The users table should have fields relevant to Google OAuth login:
+
+id: UUID (Primary Key)
+
+session_id: Unique identifier from Google
+
+email: User email
+
+name: User's full name
+
+avatar_url: URL of the user's Google profile picture
+
+created_at: Timestamp of when the user was created
+
+updated_at: Timestamp of the last update
+
+
+
+6. Folder Structure: Follow best practices in organizing the Go code (MVC or similar patterns).
+
+
+7. JWT Handling: Generate a JWT for authenticated users and implement middleware to protect routes.
+
+
+8. Routes:
+
+Public Routes: Google login route
+
+Protected Routes: A simple GraphQL query route that retrieves authenticated user data
+
+
+
+9. PostgreSQL ORM: Use GORM or pgx to avoid raw SQL queries and ensure the application interacts with the database in a secure and maintainable way.
+
+
+10. Best HTTP Practices:
+
+Ensure that all routes return valid JSON responses with appropriate HTTP status codes.
+
+Use RESTful API principles where applicable.
+
+Use proper HTTP methods for different actions (GET, POST, etc.).
+
+
+
+11. Backend Only: The backend should serve as a RESTful/GraphQL API for a SvelteKit frontend. It should follow best HTTP practices and work flawlessly with JSON.
+
+
+12. Database Migrations: Use any Go migration tool (like golang-migrate) for database schema setup.
+
+
+13. Error Handling: Include proper error handling and logging for both the API and database interactions.
+
+
+
+Ensure that the application follows best practices for Go web development, including proper error handling, code organization, and the use of Go modules. The code should be thoroughly commented for clarity.

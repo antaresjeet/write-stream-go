@@ -1,0 +1,55 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+
+# Build and output directories
+/bin/
+/build/
+/dist/
+
+# Go test binary
+*.test
+
+# Go coverage
+*.out
+
+# Dependency directories (Vendor)
+vendor/
+
+# Environment variable files
+.env
+
+# Logs
+*.log
+logs/
+
+# IDE and Editor settings
+.vscode/
+.idea/
+*.swp
+
+# PostgreSQL data dumps and files
+*.sql
+*.dump
+
+# GraphQL code generation
+*.graphqlconfig
+generated/
+schema.graphql
+
+# Ignore database migrations generated files (if using tools like golang-migrate)
+migrations/*.log
+migrations/*.out
+
+# Go Modules
+/go.sum
+/go.mod
+
+# Compiled object files
+*.o
+
+# Debugging
+__debug_bin
